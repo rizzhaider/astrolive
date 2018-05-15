@@ -1,0 +1,57 @@
+<!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar" [ngClass]="{'sidebar-collapse': sidebarCollapsed}">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+
+                    <!--<li routerLinkActive="active">
+                        <a routerLink="/home">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        </a>
+
+                    </li>-->
+                    <li routerLinkActive="active">
+                        <a routerLink="/profile">
+                            <i class="fa fa-user-circle-o"></i>
+                            <span>Profile</span>
+
+                        </a>
+
+                    </li>
+                    <li routerLinkActive="active">
+                        <a routerLink="/followers">
+                            <i class="fa fa-users"></i>
+                            <span>Followers</span>
+                            <!---<span class="label label-primary pull-right">10</span>-->
+                        </a>
+
+                    </li>
+                    <li routerLinkActive="active">
+                        <a routerLink="/tips">
+                            <i class="fa fa-lightbulb-o"></i> <span>Add Tips</span>
+                        </a>
+                    </li>
+                    <li routerLinkActive="active">
+                        <a routerLink="/qna">
+                            <i class="fa fa-question-circle-o"></i>
+                            <span>Q&A</span>
+
+                        </a>
+
+                    </li>
+                    <li routerLinkActive="active">
+                        <a routerLink="/callhistory">
+                            <i class="fa fa-history"></i>
+                            <span>Recent Calls</span>
+
+                        </a>
+
+                    </li>
+                    
+
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>

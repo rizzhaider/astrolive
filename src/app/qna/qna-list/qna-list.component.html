@@ -1,0 +1,17 @@
+<div class="box-header with-border">
+  <h3 class="box-title">Questions</h3>
+</div>
+<!-- /.box-header -->
+<div class="box-body">
+  <div class="direct-chat-maincontacts" 
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="onScroll()"
+  [scrollWindow]="false">
+    <ul class="contacts-list">
+      <app-qna-item *ngFor="let question of qnaData" [question]="question" (questionSelected) = "onQuestionSelected(question)"></app-qna-item>
+      </ul>
+    <!-- /.contatcts-list -->
+  </div>
+</div>

@@ -1,0 +1,82 @@
+a {text-decoration:none;}
+a:hover{cursor: auto; }
+.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #d2d6de;
+}
+.sk-spinner-wave.sk-spinner
+     {
+           width: 50px;
+           height: 30px;
+           text-align: center;
+           font-size: 10px;
+       }
+.sk-spinner-wave div
+     {
+           background-color: #333;
+           height: 100%;
+           width: 6px;
+           display: inline-block;
+          -webkit-animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+                  animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+
+     }
+.sk-spinner-wave .sk-rect2
+     {
+           -webkit-animation-delay: -1.1s;
+                   animation-delay: -1.1s;
+       }
+.sk-spinner-wave .sk-rect3
+     {
+           -webkit-animation-delay: -1s;
+                   animation-delay: -1s;
+      }
+.sk-spinner-wave .sk-rect4
+     {
+           -webkit-animation-delay: -0.9s;
+                   animation-delay: -0.9s;
+      }
+.sk-spinner-wave .sk-rect5
+     {
+           -webkit-animation-delay: -0.8s;
+                   animation-delay: -0.8s;
+      }
+
+@-webkit-keyframes sk-waveStretchDelay {
+   0%, 40%, 100% {
+             -webkit-transform: scaleY(0.4);
+                     transform: scaleY(0.4); }
+
+   20% {
+             -webkit-transform: scaleY(1);
+                     transform: scaleY(1); } }
+
+@keyframes sk-waveStretchDelay {
+   0%, 40%, 100% {
+             -webkit-transform: scaleY(0.4);
+                     transform: scaleY(0.4); }
+
+   20% {
+             -webkit-transform: scaleY(1);
+                     transform: scaleY(1); } }
+                     
+                   .widget-user-image{height: 100px; float: left;}
+                     .widget-user-image img{width:80px; height:80px; margin-right:20px;}
+                     .nav{clear:both;}
+                     .box-widget{background-color:#fff;}
+                     .widget-user-username{color:#444; font-weight: lighter;}
+                     .widget-user-desc{font-size:12px;}
+                     .widget-user-desc .fa{color:#f37911;}
+                     .widget-user-desc span .fa{color:#333; cursor:pointer;}
+                     .btn-edit{background-color: #f37911; color: #fff; font-size: 13px; padding: 5px; letter-spacing: 1px; border-radius: 3px;}
+                     .widget-user-2 .widget-user-header{padding:10px;}
+                     .list-group-item{background:transparent;}
+                     p{font-size:13px; text-align: justify;}
+                     .list-group-item{font-size:13px; font-weight:bold; color:#888;}
+                     .list-group-item span{font-weight: bold; color:#333;}
+                     .description-header{color:#444; font-size:13px;}
+                     .description-header .fa{color:#f37911;}
+                     .description-text{font-size:13px; color:#888;}
+                     .mrgn-right{margin-right:15px;}
+                     

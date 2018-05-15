@@ -1,0 +1,54 @@
+<div bsModal #AstroScheduleModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="_AstroScheduleModalLabel"
+  aria-hidden="true" [config]="{backdrop: 'static', ignoreBackdropClick: true, keyboard: false}">
+ 
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title pull-left"><i class="fa fa-clock-o"></i> Inform your next Availability</h4>
+          <button type="button" class="close pull-right" (click)="AstroScheduleModal.hide()" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+        </div>
+
+       
+          <div class="modal-body modal-bodyman">
+            <div class="row">
+              <div class="col-md-7">
+                   <h5 class="text-center">Select Date</h5>
+                  <datepicker [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="false" [dateDisabled]="dateDisabled"></datepicker>
+
+              </div>
+              <div class="col-md-5">
+               <h5 class="text-center margnbtm">Select Time</h5>
+               <p class="errorMessage" [ngClass]="{'invisible': !isPastTime}">Time cannot be in the past</p>
+                <timepicker [(ngModel)]="mytime" class="timepicker" app-disable-child-inputs></timepicker>
+            
+               
+
+                
+            </div>
+
+
+
+          </div>
+          </div>
+
+          <div class="modal-footer">
+
+            <p class="text-center" style="margin:0; padding:0;">
+              
+              <a class="btn btn-signout btn-flat" (click) = "onLogout()"><i class="fa fa-sign-out"></i> OK</a>
+                                    
+              <!--<button type="submit"   class="btn btn-info btn-flat" (click)="onLogout()">Save</button>-->
+              </p>
+          </div>
+
+       
+
+
+
+      </div>
+    </div>
+
+ 
+  </div>

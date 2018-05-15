@@ -1,0 +1,138 @@
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+    [config]="{backdrop: 'static', ignoreBackdropClick: true, keyboard: false}">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content main">
+            <div class="modal-header">
+                
+                <h4 class="modal-title text-center"><small class="pull-left"><app-timer #timer></app-timer></small>On Call<small class="pull-right">{{callStatus}}</small></h4>
+                
+            </div>
+            <div class="modal-body modal-bodyman">
+                <div class="row" style="margin:0; padding:0;">
+                    <div class="col-md-6">
+
+                        <!--<video class="v" autoplay id="remotevideo" #remoteVid>
+
+          </video>-->
+                         <div class="col-sm-10 muteStatus" *ngIf="remoteOnMute">
+                            <div class="col-xs-2"></div>
+                            <div class="col-xs-8">
+                                <p>On Mute by Other Party</p>
+                            </div>
+                            <div class="col-xs-2"></div>
+                            
+                          </div>
+                        <div style="position:relative; width:100%; height:550px;">
+                           
+                            <video class="v" autoplay id="remotevideo" #remoteVid>
+                            </video>
+                            <video class="overlay" autoplay id="localVideo" #localVid muted>
+                            </video>
+                             
+                        </div>
+
+
+
+
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="direct-chat-messages" #chatBox>
+                            <div class="direct-chat-msg" [ngClass]="{'right': message.type === 'outgoing'}" *ngFor="let message of chatMessages">
+                                <div class="direct-chat-info clearfix">
+                                    <!--<span class="direct-chat-name" [ngClass]="{'pull-right': message.type === 'outgoing', 'pull-left': message.type === 'incoming' }">{{message.from}}</span>-->
+                                    
+                                </div>
+                                <!-- /.direct-chat-info -->
+                                <img class="direct-chat-img" src="assets/images/default_avatar.png" alt="message user image">
+                                <!-- /.direct-chat-img -->
+                                <div class="direct-chat-text">
+                                    <span style="float:left; display:block;">
+                                         {{message.message}}
+                                    </span>
+                                   <span class="direct-chat-timestamp pull-right">{{message.time | date:"shortTime"}}</span>
+                                    <div style="clear:both;"></div>
+                                </div>
+                                <!-- /.direct-chat-text -->
+                            </div>
+                            <!-- /.direct-chat-msg -->
+                        </div>
+
+
+
+
+
+
+
+
+                        <div class="input-group" style="margin-top:10px;">
+                            <input type="text" name="message" placeholder="Type Message ..." class="form-control" [(ngModel)]="messageText" name="message" autocomplete="off" app-detect-enter (onEnterPressed)="sendChatMessage()">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-warning btn-flat" (click)="sendChatMessage()"><i class="fa fa-send"></i></button>
+                            </span>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 control" style="position:absolute; z-index:9999999999999; bottom:0;">
+                    
+                    <p class="text-center">
+                        <button class="btn btn-flat btn-danger callActionButton"  (click)="endCall()" tooltip="Hangup"><i class="fa fa-lg fa-phone"></i></button>
+                        <button class="btn btn-flat btn-danger callActionButton"  (click)="toggleMute()" tooltip="{{muteButtonText}}"><i class="fa fa-lg" [ngClass]="{'fa-microphone': !isMute, 'fa-microphone-slash': isMute}" ></i></button>
+                    </p>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div bsModal #incomingModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myIncomingModalLabel"
+        aria-hidden="true" [config]="{backdrop: 'static', ignoreBackdropClick: true, keyboard: false}">
+
+        <div class="modal-dialog modal-sm">
+
+            <div class="modal-content">
+                <div class="modal-body modal-call">
+                    <h4 class="modal-title text-center">Incoming Call</h4>
+                    <p class="text-center" style="margin-bottom:0; padding-bottom:0;">
+                        <img src="assets/images/default_avatar.png" style="width:150px; height:150px; border-radius:50%;" />
+                    </p>
+                    <!--<h4 class="modal-title text-center">{{remoteName}}</h4>-->
+                    <h4 class="modal-title text-center">Video Call</h4>
+                    <p class="text-center" style="margin-bottom:0; padding-bottom:0;">
+                        <button class="btn btn-flat btn-success" (click)="answerCall()">
+                            <img src="assets/images/answer.png" /> Answer</button>&nbsp;
+                        <button class="btn btn-flat btn-danger" (click)="endReject()">
+                            <img src="assets/images/declineCall.png" /> Reject</button>
+                    </p>
+
+
+                </div>
+            </div>
+            <audio controls="controls" id="IncomingRing" #audioRingtone  style="display:none;">
+                <source src="assets/IncomingRing/dialring.mp3" type="audio/mpeg" />
+            </audio>
+
+
+        </div>
+
+
+
+
+
+</div>

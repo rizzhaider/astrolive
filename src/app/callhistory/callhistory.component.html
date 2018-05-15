@@ -1,0 +1,89 @@
+<app-header (sidebarButtonToggled) = "sidebarButtonToggled($event)"></app-header>
+<app-sidebar [sidebarCollapsed] = "sidebarCollapsed"></app-sidebar>
+ <!-- start preloader -->
+		<div class="preloader" *ngIf="loading">
+			<div class="sk-spinner sk-spinner-wave" style="left:50%; top:45%; position:absolute; z-index:999999;">
+     	 		<div class="sk-rect1"></div>
+       			<div class="sk-rect2"></div>
+       			<div class="sk-rect3"></div>
+      	 		<div class="sk-rect4"></div>
+      			<div class="sk-rect5"></div>
+     		</div>
+       </div>
+    	<!-- end preloader -->
+
+      <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" [ngClass]="{'sidebar-collapse': sidebarCollapsed}">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Recent Call History
+
+                </h1>
+                <ol class="breadcrumb">
+                     <li><a href="#" routerLink="/profile"><i class="fa fa-user-circle-o"></i> Profile</a></li>
+                     <li class="active">Recent Call History</li>
+                </ol>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+        
+          <!-- Main row -->
+          <div class="row">
+            <!-- Left col -->
+            <div class="col-lg-12">
+            
+   
+              <!-- Chat box -->
+              <div class="box box-warning">   
+
+
+                <p class="text-center" style="padding:10px 0 10px 0; border-bottom:1px solid #ccc;">
+                <button class="btn btn-flat btn-call1" [ngClass]="{'activeBtn': filterStatus === ''}" (click)="onSelectAll()">All <span class="callCountSpan">({{totalCalls}})</span></button><button class="btn btn-flat btn-call2"  (click)="onSelectMissed()" [ngClass]="{'activeBtn': filterStatus === defaultMissedStatus}">Missed <span class="callCountSpan">({{totalMissedCalls}})</span></button>
+                </p>
+                             
+                <div class="box-body chat" >
+
+               <div class="no-follower" style="margin-top:80px;"  *ngIf="((callHistory.length == 0) || (filterStatus === defaultMissedStatus && totalMissedCalls == 0)) && !loading">
+                        <p class="text-center" style="font-size:180px; color:#888; margin:0; padding:0;">
+                       <i class="fa fa-phone"></i>
+                        </p>
+                        <p class="text-center">No Call Records !</p>
+                    </div>
+
+
+                  <!-- chat item -->
+                  <div *ngIf="callHistory.length > 0 && !loading">
+
+
+             
+
+                  <div class="item"  *ngFor="let record of callHistory | filter:filterStatus:7"  >
+                    <i class="fa fa-lg fa-phone" [ngClass]="{'missedIcon': record[7] === defaultMissedStatus, 'normalIcon': record[7] !== defaultMissedStatus}"></i>
+                    <p class="message">
+                      <a class="name" [ngClass]="{'missed': record[7] === defaultMissedStatus}">
+                        
+                        Video Call
+                      </a>
+                     {{record[1]}}<br>
+                     <small class="text-muted" style="cursor:auto; margin:0; font-size:11px;"><i class="fa fa-clock-o"></i> {{record[6]}}</small>
+                     <br>
+                     <small class="text-muted" style="cursor:auto; margin:0; font-size:11px;"><i class="fa fa-info-circle"></i> {{record[7]}}</small>
+                    </p>
+                   
+                  </div><!-- /.item -->
+                 </div>
+                   
+                </div><!-- /.chat -->
+              </div><!-- /.box (chat box) -->
+
+            
+
+            </div>
+           
+          </div><!-- /.row (main row) -->
+
+        </section><!-- /.content -->
+        </div>    <!-- /.content-wrapper -->
+<app-large-modal [callEvent]="callEvent" (callOutEvent)="onNewCallOutEvent($event)" (callEndEvent)="onCallTerminated()"></app-large-modal>
+<app-footer [sidebarCollapsed] = "sidebarCollapsed"></app-footer>

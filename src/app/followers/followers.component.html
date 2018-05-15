@@ -1,0 +1,78 @@
+<app-header (sidebarButtonToggled) = "sidebarButtonToggled($event)"></app-header>
+<app-sidebar [sidebarCollapsed] = "sidebarCollapsed"></app-sidebar>
+
+
+  <!-- start preloader -->
+		<div class="preloader" *ngIf="loading">
+			<div class="sk-spinner sk-spinner-wave" style="left:50%; top:45%; position:absolute; z-index:999999;">
+     	 		<div class="sk-rect1"></div>
+       			<div class="sk-rect2"></div>
+       			<div class="sk-rect3"></div>
+      	 		<div class="sk-rect4"></div>
+      			<div class="sk-rect5"></div>
+     		</div>
+       </div>
+    	<!-- end preloader -->
+
+
+
+        <!-- Content Wrapper. Contains page content -->
+    
+        <div class="content-wrapper"  [ngClass]="{'sidebar-collapse': sidebarCollapsed}">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Followers
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#" routerLink="/profile"><i class="fa fa-user-circle-o"></i> Profile</a></li>
+                    <li class="active">Followers</li>
+                </ol>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+               
+ <div class="row">
+
+     <div class="col-md-12">
+       
+                <div class="no-follower" style="margin-top:80px;" *ngIf="followersList.length == 0 && !loading">
+                        <p class="text-center" style="font-size:150px; color:#888; margin:0; padding:0;">
+                       <i class="fa fa-users"></i>
+                        </p>
+                        <p class="text-center">You dont have any followers yet !</p>
+                    </div>
+
+
+                <!-- DIRECT CHAT -->
+                <div class="box box-warning direct-chat direct-chat-warning" *ngIf="followersList.length > 0 && !loading">
+
+              
+
+                    <div class="box-body">
+                    
+                   
+
+
+                <table style="width:100%; border:none;border-collapse:collapse;" >
+                <tr>
+                   <td style="vertical-align:top; width:30%;">
+                        <app-followers-list [followersList]="followersList" (followerSelected)="onFollowerSelected($event)"
+                        (scrolledDown)="onScrolledDown()"></app-followers-list>
+                   </td>
+                   <td style="vertical-align:top; width:70%;">
+                       <app-follower-detail [selectedProfile]="selectedProfile"></app-follower-detail>
+                   </td>
+                </tr>
+                </table>
+
+                      </div>
+                    </div>
+                </div>
+            </div>
+                   
+            </section><!-- /.content -->
+        </div>    <!-- /.content-wrapper -->
+       
+<app-large-modal [callEvent]="callEvent" (callOutEvent)="onNewCallOutEvent($event)"></app-large-modal>
+<app-footer [sidebarCollapsed] = "sidebarCollapsed"></app-footer>

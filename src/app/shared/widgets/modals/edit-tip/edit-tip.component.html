@@ -1,0 +1,33 @@
+<div bsModal #editTipModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="editTipModalLabel"
+  aria-hidden="true" [config]="{backdrop: 'static', ignoreBackdropClick: true, keyboard: false}">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Edit Tip</h4>
+        <button type="button" class="close pull-right" (click)="editTipModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-md-12">
+            <alert></alert>
+            <form (ngSubmit)="updateTip(f)" #f="ngForm">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Edit Tip..." [(ngModel)]="tipText" required name="tipText" #textVal="ngModel">
+                <span class="help-block" *ngIf="!textVal.valid && textVal.touched">Please enter a tip</span>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn-info" type="submit" [disabled]="!f.valid">Update</button>
+              </div>
+            </form>
+            <!-- /.form-group -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>

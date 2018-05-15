@@ -1,0 +1,47 @@
+.direct-chat-maincontacts {
+    top: 0;
+    bottom: 0;
+    height: 65vh;
+
+    width: 100%;
+    background: #d2d6de;
+    color: #fff;
+    overflow: auto;
+	
+	word-wrap: break-word;
+}
+.direct-chat-maincontacts::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	background-color: #F5F5F5;
+}
+
+.direct-chat-maincontacts::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #ccc;
+}
+
+.direct-chat-maincontacts::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ccc;
+}
+
+
+.direct-chat-maincontacts::-moz-scrollbar {
+width: 7px;
+	background-color: #ccc;
+}
+.direct-chat-maincontacts::-moz-scrollbar-track {
+-moz-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+border-radius: 5px;
+	background-color: #F5F5F5;
+}
+.direct-chat-maincontacts::-moz-scrollbar-thumb {
+border-radius: 5px;
+-moz-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+background:#ccc;
+}

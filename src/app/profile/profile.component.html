@@ -1,0 +1,113 @@
+<app-header (sidebarButtonToggled)="sidebarButtonToggled($event)"></app-header>
+<app-sidebar [sidebarCollapsed]="sidebarCollapsed"></app-sidebar>
+
+
+<!-- start preloader -->
+		<div class="preloader" *ngIf="loading">
+			<div class="sk-spinner sk-spinner-wave" style="left:50%; top:45%; position:absolute; z-index:999999;">
+     	 		<div class="sk-rect1"></div>
+       			<div class="sk-rect2"></div>
+       			<div class="sk-rect3"></div>
+      	 		<div class="sk-rect4"></div>
+      			<div class="sk-rect5"></div>
+     		</div>
+       </div>
+    	<!-- end preloader -->
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper" [ngClass]="{'sidebar-collapse': sidebarCollapsed}">
+   
+ <section class="content-header">
+                <h1>
+                    Profile
+                </h1>
+ </section>
+
+    <!-- Main content -->
+    <section class="content" *ngIf="!loading">
+       
+  
+
+        <div class="box  box-warning widget-user-2">
+                <!-- Add the bg color to the header using any of the bg-* classes -->
+               
+                <div class="no-padding">
+                    
+                <div class="col-md-12" style="border-bottom:1px solid #eee;">
+
+                     <div class="widget-user-header">
+                  <div class="widget-user-image">
+                    <img class="img-circle" src="{{profile.imgUrl}}" alt="User Avatar">
+                  </div><!-- /.widget-user-image -->
+                  <h3 class="widget-user-username">{{profile.name}}</h3>
+                  <!--<h5 class="widget-user-desc" *ngIf="!contactEditMode"><i class="fa fa-lg fa-phone-square"></i> <span>9876543210 &nbsp;<i class="fa fa-sm fa-pencil" tooltip="Edit Contact no." (click)="toggleEditMode()"></i></span></h5>
+                  <h5 class="widget-user-desc" *ngIf="contactEditMode">
+                      <input type="text-box"/>
+                      <button tooltip="Save"><i class="fa fa-lg fa-save"></i></button>
+                      <button tooltip="Cancel" (click)="EditModeCancel()"><i class="fa fa-lg fa-close"></i></button>
+                  </h5>-->
+                  <button (click)="editProfile.show(profile)" class="btn btn-flat btn-edit">Edit Profile</button>
+                
+                </div>
+
+                </div>
+             
+               <div class="col-md-6">
+                        <h4>Description</h4>
+                        <p>{{profile.description}}</p>
+                    </div>
+                   
+                    <div class="col-md-6">
+                        <h4>My Details</h4>
+                        <ul class="list-group list-group-unbordered">
+                            
+                            <li class="list-group-item">
+                                Year of Experience 
+                                <span class="pull-right">{{profile.experience}}</span>
+                            </li>
+                            <li class="list-group-item">
+                                No. of Followers 
+                                <span class="pull-right">{{profile.followerCount}}</span>
+                            </li>
+                            <li class="list-group-item">
+                                Language
+                                <ng-container *ngIf="profile.language">
+                                    <span class="pull-right" *ngFor="let language of profile.language">
+                                        <span> &nbsp;{{language.name}}&nbsp;| </span>
+                                    </span>
+                                </ng-container>
+                            </li>
+                            <li class="list-group-item">
+                                Expertise
+                                <ng-container *ngIf="profile.expertise">
+                                    <span class="pull-right" *ngFor="let expertise of profile.expertise"> &nbsp;{{expertise.name}}&nbsp;|   </span>
+                                </ng-container>
+                                <div style="clear:both;"></div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                 <div style="clear: both;"></div>
+              
+                  
+                </div>
+              </div>
+
+
+ 
+    
+   
+    
+    
+    </section>
+
+
+
+
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<app-instructions #showInstructions></app-instructions>
+<app-edit-profile #editProfile></app-edit-profile>
+<app-large-modal [callEvent]="callEvent" (callOutEvent)="onNewCallOutEvent($event)" #callModal></app-large-modal>
+<app-footer [sidebarCollapsed]="sidebarCollapsed"></app-footer>

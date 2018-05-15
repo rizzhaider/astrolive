@@ -1,0 +1,13 @@
+<div class="direct-chat-msg right">
+  <div class="direct-chat-info clearfix">
+    <span class="direct-chat-name pull-right">{{answer.astroName}}</span>
+    <span class="direct-chat-timestamp pull-left">{{answer.time| date}}</span>
+  </div>
+  <!-- /.direct-chat-info -->
+  <img class="direct-chat-img" src="{{answer.astroImgUrl}}" alt="message user image">
+  <!-- /.direct-chat-img -->
+  <div class="direct-chat-text">
+    {{answer.answer}}
+  </div>
+  <!-- /.direct-chat-text -->
+</div>

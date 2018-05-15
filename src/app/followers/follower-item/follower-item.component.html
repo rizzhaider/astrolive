@@ -1,0 +1,14 @@
+<li  (click)="onSelectFollower()" style="border-bottom:1px solid rgba(0, 0, 0, 0.2);" [ngClass]="{'active': follower.isActive}">
+  <a >
+    <img class="contacts-list-img direct-chat-img" src="assets/images/default_avatar.png" *ngIf="!follower.image">
+    <img class="contacts-list-img direct-chat-img" src="{{follower.image}}" *ngIf="follower.image">
+    <div class="contacts-list-info">
+      <span class="contacts-list-name">{{follower.fName}}
+        
+     </span>
+      <span class="contacts-list-msg">{{follower.place}}</span>
+    </div>
+    <!-- /.contacts-list-info -->
+  </a>
+</li>
+

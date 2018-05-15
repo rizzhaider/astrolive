@@ -1,0 +1,13 @@
+<li (click)="onSelectQuestion()" style="border-bottom:1px solid rgba(0, 0, 0, 0.2);" [ngClass]="{'active': question.isActive}">
+  <a>
+    <img class="contacts-list-img direct-chat-img" src="assets/images/default_avatar.png" *ngIf="!question.userImgUrl">
+    <img class="contacts-list-img direct-chat-img" src="{{question.userImgUrl}}" *ngIf="question.userImgUrl">
+    <div class="contacts-list-info">
+      <span class="contacts-list-name">{{question.userName}}
+        <small class="contacts-list-date pull-right">{{question.time | date}}</small>
+     </span>
+      <span class="contacts-list-msg">{{question.question}}</span>
+    </div>
+    <!-- /.contacts-list-info -->
+  </a>
+</li>

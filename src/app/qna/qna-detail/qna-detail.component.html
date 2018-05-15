@@ -1,0 +1,49 @@
+<div class="box-header with-border">
+  <h3 class="box-title">Answers</h3>
+
+</div>
+<!-- /.box-header -->
+<div class="box-body">
+  
+  <div class="direct-chat-messages">
+    
+     <div class="direct-chat-msg">
+    <div class="direct-chat-info clearfix">
+      <span class="direct-chat-name pull-left">{{question.userName}}</span>
+       <span class="direct-chat-timestamp pull-right">{{question.time | date}}</span>
+    </div><!-- /.direct-chat-info -->
+    <img class="direct-chat-img" src="assets/images/default_avatar.png" alt="message user image" *ngIf="!question.userImgUrl"><!-- /.direct-chat-img -->
+    <img class="direct-chat-img" src="{{question.userImgUrl}}" alt="message user image" *ngIf="question.userImgUrl"><!-- /.direct-chat-img -->
+     
+     <div class="direct-chat-text">
+    {{question.question}} ?
+     </div><!-- /.direct-chat-text -->
+    </div>
+      
+        <ng-container *ngIf="question.astroList.length > 0; else infoText">
+          <app-answer-list [answerList]="question.astroList"></app-answer-list>
+        </ng-container>
+        <ng-template #infoText>
+          No Answers yet for this question
+        </ng-template>
+        <!-- /.direct-chat-msg -->
+        <!--Message. Default to the left -->
+
+     
+  </div>
+
+</div>
+
+<div class="box-footer">
+  <form (ngSubmit)="addAnswer()" #f="ngForm">
+    <div class="input-group">
+      <!--<input type="text" name="message" placeholder="Type Answer ..." class="form-control">-->
+      <input type="text" id="answerText" class="form-control"  [(ngModel)]="answerText"
+                name="answer" required  #answer="ngModel" autocomplete="off">
+      <span class="input-group-btn">
+        <button class="btn btn-warning btn-flat" type="submit" [disabled]="!f.valid"><i class="fa fa-send"></i></button>
+      </span>
+    </div>
+  </form>
+</div>
+<!-- /.box-footer-->

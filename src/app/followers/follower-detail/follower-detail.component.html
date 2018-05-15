@@ -1,0 +1,54 @@
+<ng-container *ngIf="selectedProfile">
+  <div class="box-header with-border">
+  <h3 class="box-title">Profile</h3>
+
+</div>
+<!-- /.box-header -->
+<div class="box-body">
+  <div class="direct-chat-messages">
+   
+
+     <img class="profile-user-img img-responsive img-circle" src="assets/images/default_avatar.png" alt="User profile picture" *ngIf="!selectedProfile.imgUrl">
+     <img class="profile-user-img img-responsive img-circle" src="{{selectedProfile.imgUrl}}" style="width:100px; height:100px;" alt="User profile picture" *ngIf="selectedProfile.imgUrl">
+                            <h3 class="profile-username text-center" style="font-size:16px; font-weight:bold;"> {{selectedProfile.firstName}} {{selectedProfile.lastName}}</h3>
+                            <ul class="list-group list-group-unbordered">
+                                <li class="list-group-item">
+                                    <b>First Name</b> <a class="pull-right">{{selectedProfile.firstName}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Last Name</b> <a class="pull-right">{{selectedProfile.lastName}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Gender</b> <a class="pull-right">{{selectedProfile.gender}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Date of Birth</b> <a class="pull-right">{{selectedProfile.dateOfBirth}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Time of Birth</b> <a class="pull-right">{{selectedProfile.time | date:"shortTime"}}</a>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Place of Birth</b> <a class="pull-right">{{selectedProfile.birthCountry}}, {{selectedProfile.birthState}}, {{selectedProfile.birthCity}}  </a>
+                                </li>
+                                
+                            </ul>
+                           
+
+
+
+
+
+
+
+
+
+
+     
+    
+     
+  </div>
+
+</div>
+</ng-container>
+
+

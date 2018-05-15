@@ -1,0 +1,50 @@
+
+<div class="login-page">
+
+  <div class="login-box">
+        <div class="login-logo">
+
+        </div><!-- /.login-logo -->
+        <div class="login-box-body">
+
+            <form (ngSubmit)="login(f)" #f="ngForm" class="form-horizontal">
+                <p><alert></alert></p>
+                <p class="text-center userIcon"><img src="assets/images/astrolive_squareLogo.png" /></p>
+
+               <div id="user-data">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="User Id" ngModel name="username" required #username="ngModel" autocomplete="off">
+                    <span class="fa fa-envelope form-control-feedback"></span>
+                    <span class="help-block" *ngIf="!username.valid && username.touched">Please enter a username</span>
+                </div>
+                
+                <div class="form-group has-feedback">
+                    <input type="password" id="password" class="form-control" placeholder="Password"  ngModel name="password" required  #password="ngModel">
+                    <span class="fa fa-unlock-alt form-control-feedback"></span>
+                    <span class="help-block" *ngIf="!password.valid && password.touched">Please enter a password</span>
+                 </div>
+             
+                </div>
+                
+                    <div class="row">
+
+                        <div class="col-xs-12">
+                            <p class="text-center">
+                                <button  type="submit" [disabled]="!f.valid" class="btn btn-primary  btn-flat">Sign In</button>
+                               
+                            </p>
+
+                        </div><!-- /.col -->
+
+                    </div>
+               
+
+
+               
+            </form>
+
+
+        </div><!-- /.login-box-body -->
+    </div>
+
+    </div>

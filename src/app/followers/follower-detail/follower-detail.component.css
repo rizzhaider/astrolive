@@ -1,0 +1,32 @@
+
+a:hover{text-decoration:none; cursor: auto;}
+.direct-chat-messages {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+  padding: 10px;
+  height: 57vh;
+  overflow: auto;
+}
+
+
+.direct-chat-messages::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	background-color: #F5F5F5;
+}
+
+.direct-chat-messages::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #ccc;
+}
+
+.direct-chat-messages::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ccc;
+}

@@ -1,0 +1,20 @@
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.help-block {
+    color: red
+}
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+@media (min-width: 768px){
+
+.modal-dialog {
+    width: 600px;
+    margin: 150px auto;
+}
+}

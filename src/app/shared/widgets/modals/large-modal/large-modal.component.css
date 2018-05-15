@@ -1,0 +1,125 @@
+ .overlay {
+            position: absolute;
+            bottom: 0;
+            color: #FFF;
+            text-align: center;
+            font-size: 20px;
+            background-color: #000;
+            width: 100px;
+            height: 100px;
+            padding: 0;
+            margin: 0;
+            z-index: 2147483647;
+            left: 0;
+            border-radius: 1%;
+            object-fit: cover;
+            border: 1px solid #fff;
+        }
+
+
+
+        .v {
+              z-index: 1;
+             
+            width: 100%;
+            
+           height:500px;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 767px) {
+            .overlay {
+                width: 100px;
+                height: 100px;
+            }
+
+            .overlayBefore {
+                width: 100%;
+                height: 100vh;
+            }
+        }
+        
+
+          .modal-lg {
+    width: 75%!important;
+   
+    object-fit:cover!important;
+    
+}
+        .modal-header{
+
+              background-color:#f37911!important;
+              border-top-left-radius: 4px;
+               border-top-right-radius: 4px;
+                padding: 5px 0 0 0; margin:0;
+    border-bottom: 1px solid #f1f1f1;
+    color:#fff;
+          }
+        .modal-bodyman{
+            
+     background-image: url('/assets/images/xxxhdpi-bg-screen.png');
+   -webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover;
+background-position:center;
+
+        }
+           .modal-title{color:#fff; padding-bottom:5px;}
+.direct-chat-messages::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 5px;
+	background-color: #F5F5F5;
+}
+.modal-call{
+    background-color: #000;
+}
+
+.direct-chat-messages::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #ccc;
+}
+
+.direct-chat-messages::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #ccc;
+}
+span.direct-chat-name{color:#333;}
+
+.modal-call{background-color:#000;}
+
+.direct-chat-timestamp.pull-right {
+    font-size: 12px;
+    margin-top: 16px;
+}
+h4.modal-title small{color:#fff; padding: 5px 10px 0 10px;}
+
+.right .direct-chat-text {
+    background: #ffe9c6;
+    border: 1px solid #ffe9c6;
+}
+
+.muteStatus {
+    text-align: center;
+    margin-left: 24px;
+    position: absolute;
+    z-index: 9999;
+}
+
+.muteStatus p {
+    background: rgba(243, 121, 17, 0.55);
+    color: #fff;
+}
+
+button.callActionButton {
+    border-radius:50%; 
+    width:40px; 
+    height:40px; 
+    padding:0;
+    outline-style: none;
+}

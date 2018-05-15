@@ -1,0 +1,51 @@
+a {text-decoration:none; }
+
+li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 0;
+  font-weight: normal; font-size:12px;
+  cursor: pointer;
+}
+li:hover{background:rgba(0, 0, 0, 0.1);}
+li:before,
+li:after {
+  content: " ";
+  display: table;
+}
+li:after {
+  clear: both;
+}
+li:last-of-type {
+  border-bottom: none;
+}
+.contacts-list-img {
+  border-radius: 50%;
+  width: 40px;
+  float: left;
+}
+.contacts-list-info {
+  margin-left: 45px;
+  color: #444;
+}
+.contacts-list-name,
+.contacts-list-status {
+  display: block;
+}
+.contacts-list-name {
+  font-weight: 600;
+}
+.contacts-list-status {
+  font-size: 12px;
+}
+.contacts-list-date {
+  color: #444;
+  font-weight: normal;
+}
+.contacts-list-msg {
+  color: #444;
+}
+
+.active {
+  background:rgba(0, 0, 0, 0.3);
+}

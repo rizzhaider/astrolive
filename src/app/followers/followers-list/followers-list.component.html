@@ -1,0 +1,18 @@
+<div class="box-header with-border">
+  <h3 class="box-title">Followers</h3>
+</div>
+<!-- /.box-header -->
+<div class="box-body">
+  <div class="direct-chat-maincontacts"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="500"
+  (scrolled)="onScroll()"
+  [scrollWindow]="false">
+    <ul class="contacts-list">
+       <app-follower-item *ngFor="let follower of followersList" [follower]="follower" (followerSelected) = "onFollowerSelected(follower)"></app-follower-item>
+      </ul>
+    <!-- /.contatcts-list -->
+  </div>
+</div>
+
